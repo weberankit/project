@@ -11,38 +11,51 @@ const App = () => {
 
   console.log(mob, adhar);
   const [final, setfinal] = useState("");
-
- ;
+  const [show, setShow] = useState(false);
+  const [showReader, setShowReader] = useState(false);
 
   return (
     <>
-<h1 className="text-center p-2 bg-slate-500 ">SALO0 TAE KARKEDO MERA NHI to Tumari AISI KI tAisi.....</h1>
+<h1 className="text-center p-2 bg-slate-500 ">This is just a demo</h1>
 
    <div className="gray p-4 ">
+
+ { !show && <div className="bg-orange-400 p-2 text-center" onClick={()=>{
+     setShow(true)
+   }}><button>Register</button></div>
    
-   </div>
-
-
+  }
+</div>
 
 
 
    <div className="w-56 m-auto">
-         <QRCode value={final}></QRCode>
+      {show && <QRCode value={final}></QRCode>}
 </div>
 
-      <Detailuser setAdhar={setadhar} setMobile={setmobile} />
-
+    {show &&  <Detailuser setAdhar={setadhar} setMobile={setmobile} />
+}
      
-     <button className="p-3 text-center rounded-md  bg-gray-800 text-cyan-50 w-full"
+{show &&  <button className="p-3 text-center rounded-md  bg-gray-800 text-cyan-50 w-full"
         onClick={() => {
           setfinal(adhar + "/" + mob);
          
         }}
       >
         Generate Qr code
-      </button>
-      <Reader/>
+      </button>}
+  {
 
+ !showReader && <div onClick={()=>{
+  setShowReader(true)
+}} className="bg-orange-400 p-2 text-center"><button>Scan Qr code</button></div>
+
+
+}
+
+      <div className="w-56 m-auto">
+      {showReader && <Reader/>}
+</div>
 
     </>
   );

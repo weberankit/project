@@ -2961,18 +2961,37 @@ const App = ()=>{
     const [adhar, setadhar] = (0, _react.useState)(121);
     console.log(mob, adhar);
     const [final, setfinal] = (0, _react.useState)("");
+    const [show, setShow] = (0, _react.useState)(false);
+    const [showReader, setShowReader] = (0, _react.useState)(false);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 className: "text-center p-2 bg-slate-500 ",
-                children: "SALO0 TAE KARKEDO MERA NHI to Tumari AISI KI tAisi....."
+                children: "This is just a demo"
             }, void 0, false, {
                 fileName: "App.js",
                 lineNumber: 19,
                 columnNumber: 1
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "gray p-4 "
+                className: "gray p-4 ",
+                children: !show && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "bg-orange-400 p-2 text-center",
+                    onClick: ()=>{
+                        setShow(true);
+                    },
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        children: "Register"
+                    }, void 0, false, {
+                        fileName: "App.js",
+                        lineNumber: 25,
+                        columnNumber: 7
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "App.js",
+                    lineNumber: 23,
+                    columnNumber: 13
+                }, undefined)
             }, void 0, false, {
                 fileName: "App.js",
                 lineNumber: 21,
@@ -2980,27 +2999,27 @@ const App = ()=>{
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "w-56 m-auto",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactQrCodeDefault.default), {
+                children: show && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactQrCodeDefault.default), {
                     value: final
                 }, void 0, false, {
                     fileName: "App.js",
-                    lineNumber: 30,
-                    columnNumber: 10
+                    lineNumber: 33,
+                    columnNumber: 16
                 }, undefined)
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 29,
+                lineNumber: 32,
                 columnNumber: 4
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _deatilUserDefault.default), {
+            show && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _deatilUserDefault.default), {
                 setAdhar: setadhar,
                 setMobile: setmobile
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 33,
-                columnNumber: 7
+                lineNumber: 36,
+                columnNumber: 15
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+            show && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                 className: "p-3 text-center rounded-md  bg-gray-800 text-cyan-50 w-full",
                 onClick: ()=>{
                     setfinal(adhar + "/" + mob);
@@ -3008,23 +3027,47 @@ const App = ()=>{
                 children: "Generate Qr code"
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 36,
-                columnNumber: 6
+                lineNumber: 39,
+                columnNumber: 11
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _qrReaderDefault.default), {}, void 0, false, {
+            !showReader && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                onClick: ()=>{
+                    setShowReader(true);
+                },
+                className: "bg-orange-400 p-2 text-center",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    children: "Scan Qr code"
+                }, void 0, false, {
+                    fileName: "App.js",
+                    lineNumber: 51,
+                    columnNumber: 46
+                }, undefined)
+            }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 44,
+                lineNumber: 49,
+                columnNumber: 17
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "w-56 m-auto",
+                children: showReader && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _qrReaderDefault.default), {}, void 0, false, {
+                    fileName: "App.js",
+                    lineNumber: 57,
+                    columnNumber: 22
+                }, undefined)
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 56,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(App, "QgZyRS1Ft+i+HS+u1gsNLnIsRik=");
+_s(App, "wq+uN3q22zbSJkjdaOj+1lNPbvw=");
 _c = App;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 52,
+    lineNumber: 65,
     columnNumber: 13
 }, undefined));
 var _c;
